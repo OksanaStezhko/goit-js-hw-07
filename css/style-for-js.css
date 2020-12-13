@@ -1,0 +1,75 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  padding-left: 20px;
+}
+.list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homework {
+  margin-bottom: 10px;
+}
+
+.homework a {
+  text-decoration: none;
+}
+.title {
+  padding-left: 20px;
+}
+
+.gallery__item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.gallery__item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__item {
+  height: 20vw;
+  width: calc((100% - 2 * 30px) / 3);
+}
+
+.main-link {
+  text-decoration: none;
+  display: block;
+  width: 250px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+#boxes {
+  margin-top: 20px;
+}
