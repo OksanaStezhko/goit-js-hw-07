@@ -1,10 +1,12 @@
-const inputRef = document.querySelector('#font-size-control');
-const textRef = document.querySelector('#text');
+const inputRef = document.querySelector("#font-size-control");
+const textRef = document.querySelector("#text");
 
-// идея MaximRight убрать скачок при изменении шрифта, мой вариант реализации ))
-inputRef.value = parseInt(window.getComputedStyle(textRef).fontSize, 10);
+// идея MaximRight убрать скачек при изменении шрифта, мой вариант реализации )) выставила уровень по системному шрифту
+// inputRef.value = parseInt(window.getComputedStyle(textRef).fontSize, 10);
 
 function onChangeRange() {
-	textRef.style.fontSize = `${inputRef.value}px`;
+  textRef.style.fontSize = `${inputRef.value}px`;
 }
-inputRef.addEventListener('input', onChangeRange);
+onChangeRange();
+
+inputRef.addEventListener("input", onChangeRange);

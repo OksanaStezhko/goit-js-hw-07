@@ -1,4 +1,3 @@
-
 const spanValueRef = document.querySelector("#value");
 const buttonDecrementRef = document.querySelector(
   'button[data-action="decrement"]'
@@ -8,25 +7,17 @@ const buttonIncrementRef = document.querySelector(
   'button[data-action="increment"]'
 );
 
-function createCounter() {
-  let counterValue = 0;
-  const increment = function () {
-    counterValue += 1;
-    return counterValue;
-  };
-  const decrement = function () {
-    counterValue -= 1;
-    return counterValue;
-  };
+let counterValue = 0;
 
-  return { increment, decrement };
+function increment() {
+  counterValue += 1;
+  spanValueRef.textContent = counterValue;
 }
-const onClick = createCounter();
 
-buttonDecrementRef.addEventListener("click", () => {
-  spanValueRef.textContent = onClick.decrement();
-});
-buttonIncrementRef.addEventListener("click", () => {
-  spanValueRef.textContent = onClick.increment();
-});
+function decrement() {
+  counterValue -= 1;
+  spanValueRef.textContent = counterValue;
+}
 
+buttonDecrementRef.addEventListener("click", decrement);
+buttonIncrementRef.addEventListener("click", increment);

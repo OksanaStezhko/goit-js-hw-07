@@ -20,6 +20,12 @@ const images = [
 const galleryRef = document.querySelector('#gallery');
 galleryRef.classList.add('flexbox');
 
-const createItems = ({ url, alt }) => `<li class="gallery__item list"><img class="gallery__image" alt=${alt} src=${url}></li>`;
-images.map(image => galleryRef.insertAdjacentHTML('beforeend', createItems(image)));
+galleryRef.insertAdjacentHTML(
+  "beforeend",
+  images.reduce(
+    (acc, { url, alt }) =>
+      `${acc}<li class="gallery__item list"><img class="gallery__image" alt=${alt} src=${url}></li>`,
+    ""
+  )
+);
 
